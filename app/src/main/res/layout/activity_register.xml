@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F7FA"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Sección superior con la imagen del usuario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="#B2EBF2"
+            android:padding="24dp">
+
+            <!-- Imagen de perfil -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_user_placeholder"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+        <!-- Campo de Nombre de Restaurante -->
+        <EditText
+            android:id="@+id/restaurantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Restaurante"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="16dp" />
+
+        <!-- Campo de Dirección -->
+        <EditText
+            android:id="@+id/restaurantAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="16dp" />
+
+        <!-- Campo de Número -->
+        <EditText
+            android:id="@+id/restaurantPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="16dp" />
+
+        <!-- Campo de Nombre del Dueño o Representante -->
+        <EditText
+            android:id="@+id/ownerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Dueño o Representante"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="16dp" />
+
+        <!-- Campo de Correo Electrónico -->
+        <EditText
+            android:id="@+id/ownerEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="16dp" />
+
+        <!-- Campo de Contraseña -->
+        <EditText
+            android:id="@+id/ownerPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón de Registro -->
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:textColor="#FFFFFF"
+            android:background="#00D3A1"
+            android:padding="12dp"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+</ScrollView>
+
