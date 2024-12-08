@@ -23,16 +23,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.diaz.rodrigo.teceatapp.ui.theme.TecEatAppTheme
 
-
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             TecEatAppTheme {
-                // Llamamos a la pantalla de bienvenida y pasamos la función de navegación
                 WelcomeScreen(
                     onRegisterClick = {
                         val intent = Intent(this, RegisterActivity::class.java)
+                        startActivity(intent)
+                    },
+                    onEntrarClick = {
+                        val intent = Intent(this, ListaRestaurantesActivity::class.java)
                         startActivity(intent)
                     }
                 )
@@ -41,10 +45,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
-
 @Composable
-fun WelcomeScreen(onRegisterClick: () -> Unit) {
+fun WelcomeScreen(onRegisterClick: () -> Unit, onEntrarClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -52,9 +54,8 @@ fun WelcomeScreen(onRegisterClick: () -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        // Imagen del campus en la parte superior
         Image(
-            painter = painterResource(id = R.drawable.fondo_tecsup), // Imagen del campus
+            painter = painterResource(id = R.drawable.fondo_tecsup),
             contentDescription = "Campus Tecsup",
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -64,7 +65,6 @@ fun WelcomeScreen(onRegisterClick: () -> Unit) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Texto "Bienvenido a"
         Text(
             text = "Bienvenido a",
             fontSize = 24.sp,
@@ -72,9 +72,8 @@ fun WelcomeScreen(onRegisterClick: () -> Unit) {
             fontWeight = FontWeight.Bold
         )
 
-        // Logo Tec Eat
         Image(
-            painter = painterResource(id = R.drawable.logo_teceat), // Imagen de Tec Eat
+            painter = painterResource(id = R.drawable.logo_teceat), //
             contentDescription = "Logo Tec Eat",
             modifier = Modifier
                 .width(180.dp)
@@ -83,9 +82,8 @@ fun WelcomeScreen(onRegisterClick: () -> Unit) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Texto descriptivo
         Text(
-            text = "Inicia sesión en Tec Eat y disfruta de todas nuestras funcionalidades.",
+            text = "Ingresa o regístrate en Tec Eat y disfruta de todas nuestras funcionalidades.",
             fontSize = 14.sp,
             color = Color(0xFF00A6E8),
             modifier = Modifier.padding(horizontal = 16.dp)
@@ -93,30 +91,17 @@ fun WelcomeScreen(onRegisterClick: () -> Unit) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Aquí se coloca el botón con el logo de Google
         Button(
-            onClick = { /* Acción para iniciar sesión */ },
+            onClick = { onEntrarClick() },
             modifier = Modifier
                 .width(250.dp)
                 .height(50.dp)
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                // Asegúrate de que el archivo google_logo.png esté en la carpeta drawable
-                Image(
-                    painter = painterResource(id = R.drawable.google_logo), // Imagen del logo de Google
-                    contentDescription = "Google Logo",
-                    modifier = Modifier.size(24.dp)  // Ajusta el tamaño de la imagen
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(text = "Iniciar Sesión")
-            }
+            Text(text = "Entrar")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Texto clickeable para registrarse
         Text(
             text = "¿Eres dueño de un restaurante?",
             fontSize = 14.sp,
@@ -125,7 +110,7 @@ fun WelcomeScreen(onRegisterClick: () -> Unit) {
 
         ClickableText(
             text = AnnotatedString("Regístrate aquí"),
-            onClick = { onRegisterClick() },  // Ejecuta la función de navegación al hacer clic
+            onClick = { onRegisterClick() },
             style = androidx.compose.ui.text.TextStyle(
                 fontSize = 16.sp,
                 color = Color(0xFF00A6E8)
@@ -134,14 +119,14 @@ fun WelcomeScreen(onRegisterClick: () -> Unit) {
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun WelcomeScreenPreview() {
     TecEatAppTheme {
-        WelcomeScreen(onRegisterClick = {})
+        WelcomeScreen(onRegisterClick = {}, onEntrarClick = {})
     }
 }
+
 
 
 

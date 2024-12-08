@@ -5,12 +5,10 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-// Nombre de la base de datos y tabla
 private const val DATABASE_NAME = "RestauranteDB"
 private const val DATABASE_VERSION = 1
 private const val TABLE_NAME = "restaurantes"
 
-// Columnas de la tabla
 private const val COLUMN_ID = "id"
 private const val COLUMN_NAME = "nombre_restaurante"
 private const val COLUMN_ADDRESS = "direccion"
@@ -21,7 +19,6 @@ private const val COLUMN_PASSWORD = "contrasena"
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
-    // Método para crear la base de datos
     override fun onCreate(db: SQLiteDatabase?) {
         val createTable = """
             CREATE TABLE $TABLE_NAME (
@@ -38,13 +35,11 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db?.execSQL(createTable)
     }
 
-    // Método para actualizar la base de datos si hay cambios en la versión
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
     }
 
-    // Método para insertar datos en la base de datos
     fun insertRestaurante(nombre: String, direccion: String, telefono: String, dueno: String, correo: String, contrasena: String): Long {
         val db = writableDatabase
         val contentValues = ContentValues()
@@ -56,11 +51,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         contentValues.put(COLUMN_EMAIL, correo)
         contentValues.put(COLUMN_PASSWORD, contrasena)
 
-        // Insertamos los datos en la tabla
         return db.insert(TABLE_NAME, null, contentValues)
     }
 
-    // Método para obtener todos los registros
     fun getAllRestaurantes(): MutableList<String> {
         val db = readableDatabase
         val listaRestaurantes = mutableListOf<String>()

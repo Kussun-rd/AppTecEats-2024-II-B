@@ -1,5 +1,6 @@
 package com.diaz.rodrigo.teceatapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -27,7 +28,6 @@ class RegisterActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.ownerPassword)
         val registerButton = findViewById<Button>(R.id.registerButton)
 
-
         // Acción del botón para guardar los datos en la base de datos
         registerButton.setOnClickListener {
             val nombre = restaurantName.text.toString()
@@ -42,6 +42,11 @@ class RegisterActivity : AppCompatActivity() {
 
             if (id > 0) {
                 Toast.makeText(this, "Restaurante registrado con éxito!", Toast.LENGTH_SHORT).show()
+
+                // Inicia la ListaRestaurantesActivity
+                val intent = Intent(this, ListaRestaurantesActivity::class.java)
+                startActivity(intent)
+                finish() // Opcional: cierra RegisterActivity para que no se pueda volver atrás
             } else {
                 Toast.makeText(this, "Error al registrar restaurante.", Toast.LENGTH_SHORT).show()
             }

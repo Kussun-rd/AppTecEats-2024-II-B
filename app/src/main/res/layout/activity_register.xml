@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Sección superior con la imagen del usuario -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,7 +18,6 @@
             android:background="#B2EBF2"
             android:padding="24dp">
 
-            <!-- Imagen de perfil -->
             <ImageView
                 android:id="@+id/profileImage"
                 android:layout_width="100dp"
@@ -30,7 +28,6 @@
                 android:layout_marginTop="16dp" />
         </LinearLayout>
 
-        <!-- Campo de Nombre de Restaurante -->
         <EditText
             android:id="@+id/restaurantName"
             android:layout_width="match_parent"
@@ -42,7 +39,6 @@
             android:background="@drawable/edit_text_background"
             android:layout_marginTop="16dp" />
 
-        <!-- Campo de Dirección -->
         <EditText
             android:id="@+id/restaurantAddress"
             android:layout_width="match_parent"
@@ -54,7 +50,6 @@
             android:background="@drawable/edit_text_background"
             android:layout_marginTop="16dp" />
 
-        <!-- Campo de Número -->
         <EditText
             android:id="@+id/restaurantPhoneNumber"
             android:layout_width="match_parent"
@@ -67,7 +62,6 @@
             android:background="@drawable/edit_text_background"
             android:layout_marginTop="16dp" />
 
-        <!-- Campo de Nombre del Dueño o Representante -->
         <EditText
             android:id="@+id/ownerName"
             android:layout_width="match_parent"
@@ -79,7 +73,6 @@
             android:background="@drawable/edit_text_background"
             android:layout_marginTop="16dp" />
 
-        <!-- Campo de Correo Electrónico -->
         <EditText
             android:id="@+id/ownerEmail"
             android:layout_width="match_parent"
@@ -92,7 +85,6 @@
             android:background="@drawable/edit_text_background"
             android:layout_marginTop="16dp" />
 
-        <!-- Campo de Contraseña -->
         <EditText
             android:id="@+id/ownerPassword"
             android:layout_width="match_parent"
@@ -105,7 +97,6 @@
             android:background="@drawable/edit_text_background"
             android:layout_marginTop="16dp" />
 
-        <!-- Botón de Registro -->
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
