@@ -62,14 +62,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-
-    // Agregar dependencia para RecyclerView
     implementation("androidx.recyclerview:recyclerview:1.2.1")
-
-    // Agregar dependencia para Coil (Carga de imágenes)
     implementation("io.coil-kt:coil:2.2.2")
-
-    // Dependencias para pruebas unitarias
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -77,4 +71,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("com.google.android.gms:play-services-auth:20.6.0") 
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }

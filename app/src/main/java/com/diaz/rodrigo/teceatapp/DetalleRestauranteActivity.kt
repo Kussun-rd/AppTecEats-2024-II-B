@@ -55,11 +55,12 @@ class DetalleRestauranteActivity : AppCompatActivity() {
             Log.e("DetalleRestaurante", "Restaurante es nulo")
         }
     }
+
     fun onUbicacionClick(view: View) {
         val restaurante = intent.getParcelableExtra<Restaurante>("restaurante")
         if (restaurante != null) {
-            val ubicacion = "Av. Cascanueces Mz D-14 Lt 5, Santa Anita 15011"
-            val gmmIntentUri = Uri.parse("geo:0,0?q=${URLEncoder.encode(ubicacion, "UTF-8")}")
+            val ubicacionEspecifica = restaurante.ubicacionEspecifica
+            val gmmIntentUri = Uri.parse("geo:0,0?q=${URLEncoder.encode(ubicacionEspecifica, "UTF-8")}")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)

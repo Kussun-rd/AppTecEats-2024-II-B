@@ -60,7 +60,8 @@
         android:drawableStart="@drawable/google_logo"
         android:drawablePadding="8dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        android:onClick="onEntrarClick" />
 
     <TextView
         android:id="@+id/textNoAccount"

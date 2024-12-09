@@ -4,6 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Plato(
+    val titulo: String,
     val nombre: String,
     val descripcion: String,
     val precio: Double,
@@ -15,6 +16,7 @@ data class Plato(
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,
+        parcel.readString()!!,
         parcel.readDouble(),
         parcel.readFloat(),
         parcel.readString()!!,
@@ -22,6 +24,7 @@ data class Plato(
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(titulo)
         parcel.writeString(nombre)
         parcel.writeString(descripcion)
         parcel.writeDouble(precio)

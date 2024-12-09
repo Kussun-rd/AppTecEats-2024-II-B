@@ -15,6 +15,7 @@ class PlatoAdapter(private val platos: List<Plato>) :
         val nombrePlatoTextView: TextView = itemView.findViewById(R.id.nombrePlatoTextView)
         val descripcionPlatoTextView: TextView = itemView.findViewById(R.id.descripcionPlatoTextView)
         val precioPlatoTextView: TextView = itemView.findViewById(R.id.precioPlatoTextView)
+        val tituloPlatoTextView: TextView = itemView.findViewById(R.id.tituloPlatoTextView) // Agrega esta línea
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlatoViewHolder {
@@ -29,6 +30,7 @@ class PlatoAdapter(private val platos: List<Plato>) :
         holder.nombrePlatoTextView.text = plato.nombre
         holder.descripcionPlatoTextView.text = plato.descripcion
         holder.precioPlatoTextView.text = "S/. ${plato.precio}"
+        holder.tituloPlatoTextView.text = plato.titulo
     }
 
     override fun getItemCount(): Int {

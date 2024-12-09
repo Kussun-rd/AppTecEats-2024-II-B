@@ -10,7 +10,8 @@ data class Restaurante(
     val ubicacion: String,
     val telefono: String,
     val entregaEnCampus: Boolean,
-    val menu: List<Plato>
+    val menu: List<Plato>,
+    val ubicacionEspecifica: String // Agrega este campo
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
@@ -20,7 +21,8 @@ data class Restaurante(
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readByte() != 0.toByte(),
-        parcel.createTypedArrayList(Plato.CREATOR)!!
+        parcel.createTypedArrayList(Plato.CREATOR)!!,
+        parcel.readString()!! // Leer la ubicación específica
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -31,6 +33,7 @@ data class Restaurante(
         parcel.writeString(telefono)
         parcel.writeByte(if (entregaEnCampus) 1 else 0)
         parcel.writeTypedList(menu)
+        parcel.writeString(ubicacionEspecifica) // Escribir la ubicación específica
     }
 
     override fun describeContents(): Int {
