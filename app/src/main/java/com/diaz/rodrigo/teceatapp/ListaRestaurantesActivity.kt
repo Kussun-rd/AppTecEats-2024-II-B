@@ -56,7 +56,6 @@ class ListaRestaurantesActivity : AppCompatActivity() {
                 R.drawable.club_gourmet,
                 "En las instalaciones de Tecsup",
                 "(01) 3173900",
-                "(01) 3173900, referencial",
                 true,
                 listOf(
                     Plato("Ensaladas", "Ensalada Cheff", "Lechuga, tomate, pepino, huevo, jamón, queso fresco y filete de pollo a la plancha", 10.00, 4.5f, "Club Gourmet", R.drawable.ensalada_chef),
@@ -77,8 +76,6 @@ class ListaRestaurantesActivity : AppCompatActivity() {
                 R.drawable.comedor_tecsup,
                 "En las instalaciones de Tecsup",
                 "(01) 3173900",
-
-                "(01) 3173900, referencial",
                 true,
                 listOf(
                     Plato("Entrada", "Tequeños", "Tequeños con relleno de hot-dog", 2.00, 4.5f, "Comedor de Tecsup", R.drawable.tequenos_entrada),

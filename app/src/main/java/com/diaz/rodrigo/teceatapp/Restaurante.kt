@@ -11,7 +11,7 @@ data class Restaurante(
     val telefono: String,
     val entregaEnCampus: Boolean,
     val menu: List<Plato>,
-    val ubicacionEspecifica: String // Agrega este campo
+    val ubicacionEspecifica: String
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
