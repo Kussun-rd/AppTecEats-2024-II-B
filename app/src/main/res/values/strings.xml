@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TecEatApp</string>
+    <string name="redirect_uri">https://d6c4-3-82-22-185.ngrok-free.app/user/usuarios/callback/</string>
+    <string name="server_client_id">8744488186-l2qftvp5u22isbp52s7aglg4dpe38jjk.apps.googleusercontent.com</string>
+</resources>
